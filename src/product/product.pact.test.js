@@ -40,17 +40,17 @@ describe("Pact Verification", () => {
     const stateHandlers = {
       "products exists": () => {
         controller.repository.products = new Map([
-          ["10", new Product("10", "CREDIT_CARD", "28 Degrees", "v1")]
+          ["10", new Product("10", "CREDIT_CARD", "28 Degrees", "v1", 10, 1.0)]
         ]);
       },
       "products exist": () => {
         controller.repository.products = new Map([
-          ["10", new Product("10", "CREDIT_CARD", "28 Degrees", "v1")]
+          ["10", new Product("10", "CREDIT_CARD", "28 Degrees", "v1", 20, 2.0)]
         ]);
       },
       "a product with ID 10 exists": () => {
         controller.repository.products = new Map([
-          ["10", new Product("10", "CREDIT_CARD", "28 Degrees", "v1")]
+          ["10", new Product("10", "CREDIT_CARD", "28 Degrees", "v1", 10, 1.0)]
         ]);
       },
       "a product with ID 11 does not exist": () => {
@@ -84,3 +84,4 @@ describe("Pact Verification", () => {
       });
   })
 });
+
